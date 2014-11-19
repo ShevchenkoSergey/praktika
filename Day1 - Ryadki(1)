@@ -1,0 +1,49 @@
+#include <iostream.h>
+#include <conio.h>
+#include <string.h>
+using namespace std;
+int main()
+{
+    int a,b,c,d,e,f=0;
+    char A[100];
+    cout<<"vvedite ryadok:"<<endl;
+    fgets(A,100,stdin);
+    char B[100];
+    cout<<"vvedite pidryadok:"<<endl;
+    fgets(B,100,stdin);
+    a=strlen(A)-1;
+    b=strlen(B)-1;
+    for(int i=0;i<a;i++)
+    {
+     c=i;
+     for(int j=0;j<b;j++)
+     {
+      if(c<a)
+      {\
+             if(A[c]==B[j])
+             {
+             d=1;
+             }
+             else
+             {
+             d=0;
+             j=b; 
+             }
+             c=c+1;
+     }
+     else
+     {
+      d=0;
+     }
+    }
+    if(d==1)
+    {
+     e=i+1;
+     cout<<"Znaydeno na "<<e<<" simvoli"<<endl;
+     f=f+1;
+    }
+    }
+    cout<<endl<<"Znaydeno: "<<f<<"raz(i)";
+    getch();
+    return 0;
+}
