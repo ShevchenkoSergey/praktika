@@ -1,1 +1,25 @@
-1
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+ #define SIZE 250
+ int main(){
+int countK = 0;
+int countR = 0;
+int countT = 0;
+char str[] = ";;; * :";
+unsigned int i;
+for(i=0;i<strlen(str);i++){
+if(str[i]==';')countK++; 
+if(str[i]=='*')countR++;
+if(str[i]==':')countT++;
+} 
+printf("countK: %d ",countK);
+printf("\n");
+printf("countR: %d ",countR);
+printf("\n");
+printf("countT: %d ",countT);
+printf("\n");
+getch();
+return 0;
+}
+
