@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(void) 
+{const char *line = "ONE two(three, six, seven, eight, ten)four five";
+    int c, i, prntflag, result; 
+    prntflag = 0;
+    result = 0;
+    for (i = 0; (c = line[i]) != '\0'; i++) {
+        if (c == '(')
+            if (prntflag == 0) {
+                prntflag = 1;
+                continue;
+            }    
+        if (c == ')')
+            if (prntflag == 1)
+                prntflag = 0;
+        if (prntflag == 1) {
+            if (result == 0)
+                result = 1;
+            putchar(c);
+        }     }
+    if (result == 1)
+        putchar('\n');
+    else
+        printf("none" "\n");
+    system("pause");
+    return EXIT_SUCCESS;
+}
