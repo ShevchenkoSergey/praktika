@@ -1,0 +1,85 @@
+#include <iostream.h>
+#include <conio.h>
+#include <time.h>
+
+using namespace std;
+
+int main()
+{
+    int a,b,c,d,e,f,g,a1=0,b1=0;
+    srand(time(NULL));
+    int r_mass;
+    
+    
+    cout << "Vvedite rozmir masivu (chislo dolgno bit parnoe): ";
+    cin >> r_mass;
+    for(int k=0; k<1; k++)
+    {
+     d=r_mass%2;
+     if(d==1)
+     {
+      cout<<"vivveli ne parnoe chislo, vvedite esho raz: ";
+      cin>>r_mass;
+      k=-1;
+     }
+    }                
+    
+    int *A = new int[r_mass];
+    for(int z=0; z<r_mass; z++)
+    {
+     A[z]=1+rand() % 100;
+     cout<<A[z]<<" ";
+    }
+    for(int i=0; i<r_mass;i++)
+    {
+     for(int j=0; j<r_mass;j++)
+     {
+      c=j+1;
+      if(A[j]>A[c])//Ðàñïîëîæåíèå ïî âîçðàñòàíèþ
+      {
+       b=A[j];
+       A[j]=A[c];
+       A[c]=b; 
+      }
+     }
+    }
+    
+    cout<<endl;
+    
+    f=r_mass/2;
+    int B[f],C[f];
+    
+    for(int i=0; i<r_mass; i++)
+    {
+     cout<<A[i]<<" ";
+    }
+    
+    cout<<endl;
+    
+    for(int i=0; i<r_mass; i++)
+    {
+     g=i%2;
+     if(g==0)
+     {
+      B[a1]=A[i];
+      a1=a1+1;
+     }
+     if(g==1)
+     {
+      C[b1]=A[i];
+      b1=b1+1;
+     }
+    }
+    cout<<endl;
+    for(int i=0; i<f;i++)
+    {
+     cout<<B[i]<<" ";
+    }
+    cout<<endl;
+    for(int i=0; i<f;i++)
+    {
+     cout<<C[i]<<" ";
+    }
+getch();
+return 0;
+}
