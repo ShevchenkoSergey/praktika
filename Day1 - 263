@@ -1,0 +1,27 @@
+#include <iostream>
+#include <conio.h>
+#include <string> 
+using namespace std;
+string strok(string s); 
+int main()
+{   string s;
+   cout<<"Stroka ";
+   cin>>s;
+   cout<<"\n"<<"Novaj stroka: "<<strok(s);
+   cin.get();}
+string strok(string s)
+{    string d="child";
+   string k="ren";
+   int j=0;
+   int l=s.find(d);
+   if (l!=(-1)) { 
+      for (; (s.find(d,j)!=(-1)); )
+      {         int a=s.find(d,j);
+         int z=a+5;
+         s.insert(a+5,k);
+         j=z;   } 
+         return s;
+         } 
+         else
+            return "Nabir bukov *child* vidsutniy";
+          system("pause");}
