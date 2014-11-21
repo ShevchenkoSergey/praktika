@@ -1,0 +1,60 @@
+#include <iostream.h>
+#include <conio.h>
+#include <math.h>
+#include <time.h>
+
+using namespace std;
+
+void func(int Mass[1000],int Ste[50],int n, int s,int kol_chis,int otv)
+{
+     s=1;
+     for(int i=1; i<100;i++)
+     {
+      if(s<=1000)
+      {
+       int k=i;
+       s=s*5;
+       if(s<=1000)
+       {
+        kol_chis=i;
+        Ste[k]=s;
+       }
+      }
+      else
+      {
+       i=100;
+      }
+     }
+     
+     cout<<"Vvedite n: ";
+     cin>>n;
+     srand(time(NULL));
+     for(int i=0; i<n; i++)
+     {
+      Mass[i]=1+rand() % 1000;
+      cout<<Mass[i]<<"\t";
+     }
+     otv=0;
+     
+     for(int i=0; i<n; i++)
+     {
+      for(int j=0; j<kol_chis; j++)
+      {
+       if(Mass[i]==Ste[j])
+       {
+        otv=otv+1;
+        cout<<"chislo: "<<Mass[i]<<endl;
+        cout<<"v stroke: "<<i+1<<endl;
+       }
+      }
+     }
+     cout<<endl<<"kol-vo chisel stepeni 5: "<<otv;
+     getch();   
+}
+
+int main()
+{
+    int Mass[1000], Ste[50];
+    int n,s,kol_chis,otv;
+    func(Mass,Ste,n,s,kol_chis,otv);
+}
