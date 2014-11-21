@@ -1,0 +1,27 @@
+#include <iostream.h>
+#include <conio.h>
+#include <math.h>
+
+using namespace std;
+
+void func(float a, float otv,int n)
+{
+     cout<<"vvedite chislo kotoroe nado podvesti v stepin: ";
+     cin>>a;
+     cout<<"vvedite stepin dlya chisla: ";
+     cin>>n;
+     otv=a;
+     for(int i=1; i<n; i++)
+     {
+      otv=otv*a;
+     }
+     cout<<"otvet: "<<otv;
+     getch();   
+}
+
+int main()
+{
+    float a, otv; 
+    int n;
+    func(a, otv, n);
+}
