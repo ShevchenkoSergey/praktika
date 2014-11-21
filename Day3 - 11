@@ -1,0 +1,25 @@
+#include<iostream.h>
+#include<conio.h>
+#include<math.h>
+
+float fact(int n){
+      if(n>0) return n*fact(n-1);
+      return 1;
+      }
+      
+int main(){
+    float y, a, b;
+   
+   cout<<"Vvedit' a i b:"<<endl;
+   cin>>a>>b;
+   
+   if((a==0 && b==0) || (a==b)){
+           cout<<"Error!";
+           }else{
+                 y=(fact(a)+fact(b))/(fact(a)-fact(b));
+                 cout<<"y="<<y;
+                 } 
+   
+    getch();
+    return 0;
+}
