@@ -1,0 +1,69 @@
+#include <iostream.h>
+#include <conio.h>
+#include <math.h>
+
+using namespace std;
+
+void func(int a1,int a2,int a3,int b1,int b2,int b3)
+{
+     cout<<"vvedite pershe chislo: ";
+     cin>>a1;
+     cout<<"vvedite druge chislo: ";
+     cin>>b1;
+     
+     for(int i=0; i<1; i++)
+     {
+      if(a1>=10)
+      {
+       a2=a1%10;
+       a1=a1/10;
+       a3=a3+a2;
+       if(a1>=10)
+       {
+        i=-1;
+       }
+      }
+      if(a1<10)
+      {
+       a3=a3+a1;
+      }
+     }
+     
+     for(int i=0; i<1; i++)
+     {
+      if(b1>=10)
+      {
+       b2=b1%10;
+       b1=b1/10;
+       b3=b3+b2;
+       if(b1>=10)
+       {
+        i=-1;
+       }
+      }
+      if(b1<10)
+      {
+       b3=b3+b1;
+      }
+     }
+     if(a3>b3)
+     {
+      cout<<"Summa cifr bolshe v pershomu chisli";
+     }
+     if(b3>a3)
+     {
+      cout<<"Summa cifr bolshe v drugomu chisli";
+     }
+     if(a3==b3)
+     {
+      cout<<"Summa cifr v pershomu i v drugomu chisli odinakova";
+     }
+     getch();   
+}
+
+int main()
+{
+    int a1,a2,a3=0;
+    int b1,b2,b3=0;
+    func(a1,a2,a3,b1,b2,b3);
+}
