@@ -1,0 +1,84 @@
+#include <iostream>
+#include <conio.h>
+#include <windows.h>
+
+using namespace std;
+ 
+struct building     
+{                  
+    char pol[20];        
+    int rost;   
+}seredn[500];                 
+ 
+int main()
+{
+    float n,i1=0,i2=0;
+    int h;
+    cout<<"1. Zapolnyat v ruchnuyu"<<endl<<"2. Zapolnyat randomom"<<endl<<"3. Exit"<<endl;
+    cin>>h;
+	system("cls");
+    switch(h)
+    {
+     	case 1 :
+     	{
+     		cout<<"vvedite colichestvo chelovek: ";
+     		cin>>n;   
+      		for(int i=0;i<n;i++)
+      		{
+       			cout<<"Vvedite pol: ";
+       			cin>>seredn[i].pol;    
+       			cout<<"Vvedite rost: ";  
+       			cin>>seredn[i].rost;
+       			cout<<"--------------------------------"<<endl;
+    
+       			if(seredn[i].pol[0]=='m')
+       			{
+        			i1=i1+seredn[i].rost;
+        			i2=i2+1;
+       			}
+      		}
+      		i1=i1/i2;
+      		cout<<"Sredniy rost = "<< i1;
+      		break;
+     	}
+     	case 2:
+     	{
+      		n=1+rand()%50; 
+      		for(int i=0;i<n;i++)
+      		{
+       			int hg;
+       			hg=1+rand()%2;
+       			if(hg==1)
+       			{
+        			seredn[i].pol[0]='m';
+        			cout<<"Pol man\t\t";
+       			}
+       			else
+       			{
+        			if(hg==2)
+        			{
+         				seredn[i].pol[0]='w';
+         				cout<<"Pol woman\t";
+        			}
+       			}      
+       			seredn[i].rost=1+rand()%80;
+       			cout<<"Rost"<<seredn[i].rost<<endl;
+       			if(seredn[i].pol[0]=='m')
+       			{
+        			i1=i1+seredn[i].rost;
+        			i2=i2+1;
+       			}
+      		}
+      		i1=i1/i2;
+      		cout<<"Sredniy rost mugchin= "<< i1;
+      		break;
+     	}
+     	case 3:
+     	{
+      		exit(1);
+      		break;
+     	}
+    }
+	getch();
+	return 0;
+}
