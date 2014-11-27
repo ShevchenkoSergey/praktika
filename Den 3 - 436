@@ -1,0 +1,34 @@
+#include <iostream>
+#include <conio.h>
+#include <math.h>
+
+using namespace std;
+
+void func(float n[8], float d[8], float a, float b)
+{
+	float otv;
+	for(int i=0; i<8; i++)
+	{
+		cout<<"Vvedite n"<<i<<": ";
+		cin>>n[i]; 
+		cout<<"Vvedite d"<<i<<": ";
+		cin>>d[i]; 
+	}
+	cout<<"vvedite a: ";
+	cin>>a;
+	cout<<"vvedite b: ";
+	cin>>b;
+	otv=n[0]/d[0];
+	for(int i=1; i<=7; i++)
+	{
+		otv=otv+(n[i]/d[i])*(pow((a/b),i));
+	}
+	cout<<"otvet za shemoy Gornera = "<<otv;
+getch();   
+}
+
+int main()
+{
+	float n[8],d[8],a,b;
+	func(n,d,a,b);
+}
