@@ -1,0 +1,98 @@
+#include <iostream>
+#include <conio.h>
+#include <string.h>
+#include <time.h>
+#include <cstdlib>
+using namespace std;
+ 
+struct building     
+{                  
+    char  familiya[25];        
+    int predmet[10];
+    int summ;   
+}poshuk[500];                 
+ 
+int main()
+{
+    srand(time(NULL));
+    int n=0,n1=50;
+    int i,z;
+    cout<<"1. Run"<<endl<<"2. Exit"<<endl;
+    cin>>i;
+    system("cls");
+    switch(i)
+    {
+	    case 1 : 
+     	{
+      		for(int i=0;i<25;i++)
+      		{
+       			cin>>poshuk[i].familiya;
+       			for(int j=0; j<10; j++)
+       			{   
+           			poshuk[i].predmet[j]=1+rand()%5;
+           			poshuk[i].summ=poshuk[i].summ+poshuk[i].predmet[j];
+       			}
+      		}
+      		for(int i=0;i<25;i++)
+      		{ 
+       			cout<<poshuk[i].familiya<<":"<<endl;
+       			for(int j=0;j<10;j++)
+       			{   
+           			cout<<poshuk[i].predmet[j]<<" ";
+       			}
+       			cout<<" Summa = "<<poshuk[i].summ<<" "<<endl;
+      		}
+      		cout<<"1. Naybilsha summa"<<endl<<"2. Naymensha summa"<<endl;
+      		cin>>z;
+      		switch(z)
+      		{
+       			case 1:
+       			{
+        			for(int i=0;i<25;i++)
+        			{
+         				if(poshuk[i].summ>n)
+          				{
+           					n=poshuk[i].summ;
+          				}
+        			}
+      
+        			for(int i=0;i<25;i++)
+        			{ 
+          				if(poshuk[i].summ==n)
+          				{
+           					cout<<"Naybilsha summa ocinok u: "<<poshuk[i].familiya;
+          				}
+        			}
+        			getch ();
+        			break;
+       			}
+       			case 2:
+       			{
+        			for(int i=0;i<25;i++)
+        			{ 
+         				if(poshuk[i].summ<n1)
+          				{
+           					n1=poshuk[i].summ;
+          				}
+        			}
+      
+        			for(int i=0;i<25;i++)
+        			{ 
+          				if(poshuk[i].summ==n1)
+          				{
+           					cout<<"Naymensha summa ocinok u: "<<poshuk[i].familiya;
+          				}
+        			}
+        			getch ();
+        			break;
+       			}
+      		}
+     	}
+    	case 2 : 
+    	{
+     		exit(1);
+    	}
+   	}
+	getch();
+	return 0;
+}
